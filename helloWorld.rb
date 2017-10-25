@@ -34,3 +34,19 @@ get '/' do
   # render template
   haml :hi
 end
+
+post '/get_price' do
+  request.body.rewind
+  data = JSON.parse(request.body.read)
+
+  content_type :json
+  
+  data.collect do  |item| 
+  	{
+  		name: item['name'], 
+  		description: item['description'], 
+  		quantity: item['quantity'], 
+  		price: rand(100..100000) * item['quantity']
+  	}
+  end.to_json
+end
