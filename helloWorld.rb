@@ -46,7 +46,7 @@ post '/get_price' do
   		name: item['name'], 
   		description: item['description'], 
   		quantity: item['quantity'], 
-  		price: rand(100..100000) * item['quantity']
+  		price: rand(100..100000) * item['quantity'].to_i
   	}
   end.to_json
 end

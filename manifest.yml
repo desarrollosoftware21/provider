@@ -1,5 +1,5 @@
 ---
 applications:
-- name: sample-ruby-sinatra
+- name: proovedores-desarrollo21
   random-route: true
   memory: 256M
